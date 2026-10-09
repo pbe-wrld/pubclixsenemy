@@ -117,13 +117,13 @@
             opacity: 0.85;
         }
 
-        /* Main Grid Layout */
+        /* Main Layout: Aligned precisely at the top */
         main {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 60px;
             padding: 40px 50px;
-            align-items: center;
             flex-grow: 1;
             width: 100%;
             max-width: 1920px;
@@ -134,13 +134,13 @@
         .layout-left {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 25px;
+            gap: 20px;
+            width: 45%;
         }
 
         .giant-pbe-logo {
             width: 100%;
-            max-width: 460px; /* Made bigger as requested */
+            max-width: 420px;
         }
 
         .giant-pbe-logo img {
@@ -150,14 +150,14 @@
             filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.35));
         }
 
-        /* Spotify-Style Player Card - Higher and Bigger */
+        /* Spotify-Style Player Card */
         .spotify-card {
             width: 100%;
             max-width: 480px;
             background: rgba(12, 12, 12, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(12px);
-            padding: 24px;
+            padding: 22px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.8);
         }
 
@@ -166,7 +166,7 @@
             letter-spacing: 2px;
             color: #888;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-style: italic;
             font-weight: 600;
         }
@@ -175,14 +175,14 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
 
         .album-art-small {
-            width: 80px;
-            height: 80px;
+            width: 75px;
+            height: 75px;
             background: #1a1a1a;
             border: 1px solid rgba(255, 255, 255, 0.15);
             flex-shrink: 0;
@@ -201,7 +201,7 @@
 
         .wide-banner-thumb {
             flex-grow: 1;
-            height: 80px;
+            height: 75px;
             background: #111;
             border: 1px solid rgba(255, 255, 255, 0.15);
             overflow: hidden;
@@ -222,14 +222,14 @@
             justify-content: space-between;
             background: rgba(0, 0, 0, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 16px 22px;
+            padding: 14px 20px;
         }
 
         .play-btn {
             background: #ffffff;
             color: #000000;
             border: none;
-            padding: 12px 28px;
+            padding: 12px 26px;
             font-weight: 900;
             font-size: 0.8rem;
             letter-spacing: 2px;
@@ -252,7 +252,7 @@
         }
 
         .mini-progress-bar {
-            width: 110px;
+            width: 100px;
             height: 3px;
             background: #fff;
         }
@@ -261,26 +261,26 @@
         .layout-right {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
             gap: 20px;
+            width: 50%;
         }
 
         .threat-title {
-            font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
             font-weight: 900;
             letter-spacing: 2.5px;
             text-transform: uppercase;
             color: #ffffff;
             text-shadow: 0 5px 20px rgba(0,0,0,0.6);
-            white-space: nowrap; /* Forces THREAT TO EVERYONE to stay wide on one line */
+            white-space: nowrap;
+            line-height: 1; /* Locks the line-height so the top aligns cleanly with the left logo */
         }
 
         /* Longer & Wider Scrolling Lyrics Box */
         .lyrics-container {
             width: 100%;
-            max-width: 650px; /* Made much wider */
-            height: 180px;   /* Made taller/longer */
+            max-width: 650px;
+            height: 220px;
             background: rgba(12, 12, 12, 0.65);
             border: 1px solid rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
@@ -404,9 +404,12 @@
         /* Responsive Design */
         @media (max-width: 1100px) {
             main {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 gap: 40px;
                 padding: 30px 20px;
+            }
+            .layout-left, .layout-right {
+                width: 100%;
             }
             .threat-title {
                 white-space: normal;
@@ -450,7 +453,7 @@
 
     <!-- Main Content Area -->
     <main>
-        <!-- Left Column: Bigger Logo + Lifted/Bigger Player Card -->
+        <!-- Left Column: Logo + Player Card -->
         <div class="layout-left">
             <div class="giant-pbe-logo">
                 <img src="https://media.discordapp.net/attachments/1375129451175608402/1557777551248859196/53142c9b-2b97-40ad-9b9b-8e750d686eab-removebg-preview.png?ex=6ac9b1a6&is=6ac86026&hm=d6eb815801818614f8906dd936cc30bc639c6de6799d6477a01d93c393575c39&=&format=webp&quality=lossless" alt="PBE Logo">
@@ -478,11 +481,11 @@
             </div>
         </div>
 
-        <!-- Right Column: Wide Threat Title + Longer/Wider Lyrics Box -->
+        <!-- Right Column: Threat Title + Lyrics Box -->
         <div class="layout-right">
             <h2 class="threat-title">THREAT TO EVERYONE</h2>
 
-            <!-- Scrolling Lyrics Ticker Box (Wider & Longer) -->
+            <!-- Scrolling Lyrics Ticker Box -->
             <div class="lyrics-container">
                 <div class="lyrics-track">
                     <div class="lyric-line highlight">✦ Moving through the underground</div>
