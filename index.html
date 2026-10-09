@@ -13,8 +13,8 @@
 
         body {
             background-color: #080808;
-            /* Replace 'background.jpg' with your uploaded background image filename */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('background.jpg');
+            /* Your direct background link */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://media.discordapp.net/attachments/1375129451175608402/1557773782985478164/content.png?ex=6ac9ae23&is=6ac85ca3&hm=bee6fbcaeda327c8045304f100c30c1af9b44f84dc5267b399bd40cfef8af3c5&=&format=webp&quality=lossless&width=1280&height=722');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -131,7 +131,7 @@
             margin: 0 auto;
         }
 
-        /* Left Side: Wide Enemy Logo + Bold Thick Text */
+        /* Left Side: Wide Enemy Logo Link + Sub-headline */
         .hero-left {
             display: flex;
             flex-direction: column;
@@ -141,33 +141,23 @@
 
         .hero-left-logo {
             width: 100%;
-            max-width: 480px;
-            margin-bottom: 20px;
+            max-width: 520px;
+            margin-bottom: 15px;
         }
 
         .hero-left-logo img {
             width: 100%;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
-        }
-
-        .hero-left h1 {
-            font-size: clamp(2.5rem, 5vw, 4.8rem);
-            font-weight: 900;
-            line-height: 0.95;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            color: #ffffff;
-            text-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.25));
         }
 
         .hero-left p.sub-headline {
-            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-size: clamp(1rem, 2vw, 1.4rem);
             font-weight: 800;
             letter-spacing: 3px;
             color: #b0b0b0;
-            margin-top: 10px;
+            margin-top: 5px;
             text-transform: uppercase;
         }
 
@@ -207,19 +197,21 @@
         }
 
         .showcase-thumb {
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
             background: #222;
             border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            padding: 5px;
         }
 
         .showcase-thumb img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .showcase-info h3 {
@@ -373,7 +365,7 @@
 </head>
 <body>
 
-    <!-- Header Section with Navigation, About Button, Discord Link, and Visitor Count -->
+    <!-- Header Section -->
     <header>
         <div class="logo-area">
             <span class="logo-text">Public Enemy</span>
@@ -385,7 +377,7 @@
         </nav>
         <div class="nav-right-group">
             <div class="visitor-counter">
-                Views: <span id="viewCount">1,428</span>
+                Views: <span id="viewCount">1,430</span>
             </div>
             <a href="https://discord.gg/zHGBSdf4BQ" target="_blank" class="nav-btn">Join Server</a>
         </div>
@@ -393,17 +385,15 @@
 
     <!-- Main Content Area -->
     <main>
-        <!-- Left Side: Wide Enemy Logo + Bold Thick Text -->
+        <!-- Left Side: Wide Enemy Logo -->
         <div class="hero-left">
             <div class="hero-left-logo">
-                <!-- Replace 'enemy-logo.png' with your wide enemy logo filename -->
-                <img src="enemy-logo.png" alt="Enemy Logo" onerror="this.style.display='none'">
+                <img src="https://media.discordapp.net/attachments/1375129451175608402/1557777420231249970/3d6353f7-4c7c-4759-823c-2021f8bc4632-removebg-preview.png?ex=6ac9b187&is=6ac86007&hm=4c7cdbee56a1322f4f9bb45380fe837a4a7c7c6c6c57f0777495e8c188050769&=&format=webp&quality=lossless" alt="Enemy Logo">
             </div>
-            <h1>PUBLIC ENEMY</h1>
             <p class="sub-headline">Threat to Everyone</p>
         </div>
 
-        <!-- Right Side: Featured Showcase Card -->
+        <!-- Right Side: Featured Showcase Card with your other logo/image -->
         <div class="hero-right">
             <div class="showcase-card">
                 <div class="showcase-header">
@@ -412,8 +402,7 @@
                 </div>
                 <div class="showcase-content">
                     <div class="showcase-thumb">
-                        <!-- Replace 'feature.jpg' with your featured member image -->
-                        <img src="feature.jpg" alt="Member" onerror="this.style.display='none'">
+                        <img src="https://media.discordapp.net/attachments/1375129451175608402/1557777551248859196/53142c9b-2b97-40ad-9b9b-8e750d686eab-removebg-preview.png?ex=6ac9b1a6&is=6ac86026&hm=d6eb815801818614f8906dd936cc30bc639c6de6799d6477a01d93c393575c39&=&format=webp&quality=lossless" alt="Featured Logo">
                     </div>
                     <div class="showcase-info">
                         <h3>CREATOR_NAME</h3>
@@ -432,7 +421,7 @@
         </div>
     </main>
 
-    <!-- About Modal Popup (Opens when clicking the About button) -->
+    <!-- About Modal Popup -->
     <div id="aboutModal" class="modal">
         <div class="modal-content">
             <h2>About Public Enemy</h2>
@@ -448,7 +437,6 @@
     </footer>
 
     <script>
-        // Simple script to handle About Modal popup
         function openAboutModal(e) {
             e.preventDefault();
             document.getElementById('aboutModal').style.display = 'flex';
@@ -458,9 +446,8 @@
             document.getElementById('aboutModal').style.display = 'none';
         }
 
-        // Optional: simulate a slight random increment on the visitor counter for effect
         window.addEventListener('DOMContentLoaded', () => {
-            let views = 1428 + Math.floor(Math.random() * 10);
+            let views = 1430 + Math.floor(Math.random() * 5);
             document.getElementById('viewCount').textContent = views.toLocaleString();
         });
     </script>
