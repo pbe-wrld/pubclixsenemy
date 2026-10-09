@@ -117,31 +117,31 @@
             opacity: 0.85;
         }
 
-        /* Main Balanced Layout */
+        /* Main Balanced Layout (Mas pinalapit at mas malaki para mawala ang gitnang space) */
         main {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 60px;
-            padding: 50px;
+            gap: 40px;
+            padding: 40px 60px;
             flex-grow: 1;
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
         }
 
-        /* Left Column: Massive Logo Top + Wide Audio Player Bottom */
+        /* Left Column: Mas pinalaki at pinalawak */
         .layout-left {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 40px;
-            width: 48%;
+            gap: 35px;
+            width: 52%;
         }
 
         .giant-pbe-logo {
             width: 100%;
-            max-width: 520px;
+            max-width: 640px; /* Mas pinalaki */
             text-align: left;
         }
 
@@ -149,22 +149,22 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
+            filter: drop-shadow(0 0 45px rgba(255, 255, 255, 0.45));
         }
 
-        /* Spotify-Style Player Card */
+        /* Spotify-Style Player Card - Mas pinalaki rin */
         .spotify-card {
             width: 100%;
-            max-width: 540px;
+            max-width: 640px; /* Pantay sa bagong laki ng logo */
             background: rgba(12, 12, 12, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(12px);
-            padding: 24px;
+            padding: 26px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.8);
         }
 
         .spotify-header {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             color: #888;
             text-transform: uppercase;
@@ -183,8 +183,8 @@
         }
 
         .album-art-small {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             background: #1a1a1a;
             border: 1px solid rgba(255, 255, 255, 0.15);
             flex-shrink: 0;
@@ -203,7 +203,7 @@
 
         .wide-banner-thumb {
             flex-grow: 1;
-            height: 80px;
+            height: 90px;
             background: #111;
             border: 1px solid rgba(255, 255, 255, 0.15);
             overflow: hidden;
@@ -224,16 +224,16 @@
             justify-content: space-between;
             background: rgba(0, 0, 0, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 14px 22px;
+            padding: 16px 24px;
         }
 
         .play-btn {
             background: #ffffff;
             color: #000000;
             border: none;
-            padding: 12px 28px;
+            padding: 14px 32px;
             font-weight: 900;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 2px;
             cursor: pointer;
             transition: opacity 0.2s;
@@ -246,7 +246,7 @@
         .player-meta {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
             font-size: 0.75rem;
             letter-spacing: 1.5px;
             color: #888;
@@ -254,23 +254,23 @@
         }
 
         .mini-progress-bar {
-            width: 120px;
+            width: 150px;
             height: 3px;
             background: #fff;
         }
 
-        /* Right Column: Massive Title + Subtitle + Action Buttons */
+        /* Right Column: Mas malaki at balanse rin */
         .layout-right {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            width: 48%;
+            gap: 25px;
+            width: 42%;
             align-items: flex-end;
             text-align: right;
         }
 
         .threat-title {
-            font-size: clamp(3rem, 5vw, 5.5rem);
+            font-size: clamp(2.8rem, 4.5vw, 5rem);
             font-weight: 900;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -280,12 +280,12 @@
         }
 
         .right-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: #aaa;
             letter-spacing: 1px;
             line-height: 1.5;
-            max-width: 450px;
+            max-width: 420px;
         }
 
         .action-buttons-row {
@@ -298,7 +298,7 @@
             background: rgba(255, 255, 255, 0.08);
             color: #fff;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 12px 24px;
+            padding: 12px 26px;
             font-weight: 800;
             font-size: 0.75rem;
             letter-spacing: 2px;
@@ -423,7 +423,7 @@
         </nav>
         <div class="nav-right-group">
             <div class="visitor-counter">
-                Views: <span id="viewCount">1,430</span>
+                Views: <span id="viewCount">1,433</span>
             </div>
             <a href="https://discord.gg/zHGBSdf4BQ" target="_blank" class="nav-btn">Join Server</a>
         </div>
@@ -431,7 +431,7 @@
 
     <!-- Main Content Area -->
     <main>
-        <!-- Left Column: Massive Logo Top (Using new cropped image) + Wide Audio Player Bottom -->
+        <!-- Left Column: PBE Logo (Bagong Cropped Image) + Audio Player -->
         <div class="layout-left">
             <div class="giant-pbe-logo">
                 <img src="https://media.discordapp.net/attachments/1375129451175608402/1558185348985528390/content.png?ex=6aca84b0&is=6ac93330&hm=8f341f092d7b5230a2726af6685e6feb6e41d4313d3a4ff8b3f435184e874104&=&format=webp&quality=lossless&width=1536&height=769" alt="PBE Logo">
@@ -459,7 +459,7 @@
             </div>
         </div>
 
-        <!-- Right Column: Massive Title + Subtitle + Action Buttons -->
+        <!-- Right Column: Threat to Everyone Title + Subtitle -->
         <div class="layout-right">
             <h1 class="threat-title">THREAT TO EVERYONE</h1>
             <p class="right-subtitle">Find a PBE member, hear the uncopyrighted music, or explore the underground collective.</p>
@@ -512,7 +512,7 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            let views = 1430 + Math.floor(Math.random() * 5);
+            let views = 1433 + Math.floor(Math.random() * 5);
             document.getElementById('viewCount').textContent = views.toLocaleString();
         });
     </script>
