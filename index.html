@@ -117,16 +117,16 @@
             opacity: 0.85;
         }
 
-        /* Main Balanced Layout (In-adjust para mas lumapit sa gitna) */
+        /* Main Balanced Layout (Pinakapit pa ang right side sa gitna) */
         main {
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 80px;
-            padding: 40px 40px;
+            gap: 100px;
+            padding: 40px 30px;
             flex-grow: 1;
             width: 100%;
-            max-width: 1550px;
+            max-width: 1450px;
             margin: 0 auto;
         }
 
@@ -259,7 +259,7 @@
             background: #fff;
         }
 
-        /* Right Column */
+        /* Right Column (Mas pinalapit sa gitna) */
         .layout-right {
             display: flex;
             flex-direction: column;
@@ -267,6 +267,7 @@
             width: 44%;
             align-items: flex-end;
             text-align: right;
+            margin-right: -30px; /* Dinagdagan ng slight offset para mas lumapit sa gitna */
         }
 
         .threat-title {
@@ -391,6 +392,7 @@
                 width: 100%;
                 align-items: flex-start;
                 text-align: left;
+                margin-right: 0;
             }
             header, footer {
                 padding-left: 20px;
