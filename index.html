@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PBE / THREAT TO EVERYONE</title>
+    <!-- Import Google Font for Street Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -117,7 +119,7 @@
             opacity: 0.85;
         }
 
-        /* Main Balanced Layout (Pinakapit pa ang right side sa gitna) */
+        /* Main Balanced Layout */
         main {
             display: flex;
             justify-content: center;
@@ -259,7 +261,7 @@
             background: #fff;
         }
 
-        /* Right Column (Mas pinalapit sa gitna) */
+        /* Right Column */
         .layout-right {
             display: flex;
             flex-direction: column;
@@ -267,26 +269,18 @@
             width: 44%;
             align-items: flex-end;
             text-align: right;
-            margin-right: -30px; /* Dinagdagan ng slight offset para mas lumapit sa gitna */
+            margin-right: -30px;
         }
 
         .threat-title {
-            font-size: clamp(2.8rem, 4.5vw, 5rem);
-            font-weight: 900;
-            letter-spacing: 3px;
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(3.5rem, 6vw, 6.5rem);
+            font-weight: 400;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: #ffffff;
             line-height: 0.95;
             text-shadow: 0 5px 25px rgba(0,0,0,0.7);
-        }
-
-        .right-subtitle {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #aaa;
-            letter-spacing: 1px;
-            line-height: 1.5;
-            max-width: 420px;
         }
 
         .action-buttons-row {
@@ -461,10 +455,9 @@
             </div>
         </div>
 
-        <!-- Right Column: Threat to Everyone Title + Subtitle -->
+        <!-- Right Column: Threat to Everyone Title + Action Buttons -->
         <div class="layout-right">
             <h1 class="threat-title">THREAT TO EVERYONE</h1>
-            <p class="right-subtitle">Find a PBE member, hear the uncopyrighted music, or explore the underground collective.</p>
             <div class="action-buttons-row">
                 <a href="https://discord.gg/zHGBSdf4BQ" target="_blank" class="action-btn primary">DISCORD ↗</a>
                 <a href="#" onclick="openAboutModal(event)" class="action-btn">ABOUT US</a>
