@@ -117,43 +117,100 @@
             opacity: 0.85;
         }
 
-        /* Main Layout */
+        /* Main Balanced Layout Matching OZY Reference */
         main {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 50px;
-            padding: 35px 50px;
+            gap: 60px;
+            padding: 50px;
             flex-grow: 1;
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
         }
 
-        /* Left Column - Enlarged */
+        /* Left Column: Massive Title + Subtitle + Action Buttons */
         .layout-left {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
+            width: 48%;
+        }
+
+        .threat-title {
+            font-size: clamp(3rem, 5vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            line-height: 0.95;
+            text-shadow: 0 5px 25px rgba(0,0,0,0.7);
+        }
+
+        .left-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #aaa;
+            letter-spacing: 1px;
+            line-height: 1.5;
+            max-width: 450px;
+        }
+
+        .action-buttons-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 24px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .action-btn.primary {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Right Column: Massive Logo Top + Wide Audio Player Bottom */
+        .layout-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 40px;
             width: 48%;
         }
 
         .giant-pbe-logo {
             width: 100%;
-            max-width: 540px; /* Much bigger logo */
+            max-width: 520px;
+            text-align: right;
         }
 
         .giant-pbe-logo img {
             width: 100%;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.4));
+            filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
         }
 
-        /* Spotify-Style Player Card - Enlarged & Wider */
+        /* Spotify-Style Player Card - Perfectly Proportional */
         .spotify-card {
             width: 100%;
-            max-width: 540px; /* Matched to logo width */
+            max-width: 540px;
             background: rgba(12, 12, 12, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(12px);
@@ -162,7 +219,7 @@
         }
 
         .spotify-header {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 2px;
             color: #888;
             text-transform: uppercase;
@@ -181,8 +238,8 @@
         }
 
         .album-art-small {
-            width: 85px;
-            height: 85px;
+            width: 80px;
+            height: 80px;
             background: #1a1a1a;
             border: 1px solid rgba(255, 255, 255, 0.15);
             flex-shrink: 0;
@@ -201,7 +258,7 @@
 
         .wide-banner-thumb {
             flex-grow: 1;
-            height: 85px;
+            height: 80px;
             background: #111;
             border: 1px solid rgba(255, 255, 255, 0.15);
             overflow: hidden;
@@ -222,16 +279,16 @@
             justify-content: space-between;
             background: rgba(0, 0, 0, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 16px 24px;
+            padding: 14px 22px;
         }
 
         .play-btn {
             background: #ffffff;
             color: #000000;
             border: none;
-            padding: 14px 32px;
+            padding: 12px 28px;
             font-weight: 900;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             cursor: pointer;
             transition: opacity 0.2s;
@@ -244,7 +301,7 @@
         .player-meta {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 15px;
             font-size: 0.75rem;
             letter-spacing: 1.5px;
             color: #888;
@@ -252,89 +309,9 @@
         }
 
         .mini-progress-bar {
-            width: 130px;
+            width: 120px;
             height: 3px;
             background: #fff;
-        }
-
-        /* Right Column */
-        .layout-right {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 48%;
-        }
-
-        .threat-title {
-            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
-            font-weight: 900;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: #ffffff;
-            text-shadow: 0 5px 20px rgba(0,0,0,0.6);
-            white-space: nowrap;
-            line-height: 1;
-        }
-
-        /* Scrolling Lyrics Box */
-        .lyrics-container {
-            width: 100%;
-            max-width: 650px;
-            height: 240px;
-            background: rgba(12, 12, 12, 0.65);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            overflow: hidden;
-            position: relative;
-            padding: 20px 25px;
-        }
-
-        .lyrics-container::before, .lyrics-container::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            height: 40px;
-            z-index: 2;
-            pointer-events: none;
-        }
-        .lyrics-container::before {
-            top: 0;
-            background: linear-gradient(to bottom, rgba(12,12,12,0.95), transparent);
-        }
-        .lyrics-container::after {
-            bottom: 0;
-            background: linear-gradient(to top, rgba(12,12,12,0.95), transparent);
-        }
-
-        .lyrics-track {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            animation: scrollLyrics 14s linear infinite;
-        }
-
-        .lyrics-track:hover {
-            animation-play-state: paused;
-        }
-
-        .lyric-line {
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #999;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        .lyric-line.highlight {
-            color: #ffffff;
-            text-shadow: 0 0 12px rgba(255,255,255,0.5);
-        }
-
-        @keyframes scrollLyrics {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-50%); }
         }
 
         /* Bottom Footer Bar */
@@ -410,9 +387,10 @@
             }
             .layout-left, .layout-right {
                 width: 100%;
+                align-items: flex-start;
             }
-            .threat-title {
-                white-space: normal;
+            .giant-pbe-logo {
+                text-align: left;
             }
             header, footer {
                 padding-left: 20px;
@@ -451,10 +429,20 @@
         </div>
     </header>
 
-    <!-- Main Content Area -->
+    <!-- Main Content Area matching OZY proportions -->
     <main>
-        <!-- Left Column: Larger Logo + Enlarged Player Card -->
+        <!-- Left Column: Massive Title + Subtitle / Info -->
         <div class="layout-left">
+            <h1 class="threat-title">THREAT TO EVERYONE</h1>
+            <p class="left-subtitle">Find a PBE member, hear the uncopyrighted music, or explore the underground collective.</p>
+            <div class="action-buttons-row">
+                <a href="https://discord.gg/zHGBSdf4BQ" target="_blank" class="action-btn primary">DISCORD ↗</a>
+                <a href="#" onclick="openAboutModal(event)" class="action-btn">ABOUT US</a>
+            </div>
+        </div>
+
+        <!-- Right Column: Massive Logo Top + Wide Audio Player Bottom -->
+        <div class="layout-right">
             <div class="giant-pbe-logo">
                 <img src="https://media.discordapp.net/attachments/1375129451175608402/1557777551248859196/53142c9b-2b97-40ad-9b9b-8e750d686eab-removebg-preview.png?ex=6ac9b1a6&is=6ac86026&hm=d6eb815801818614f8906dd936cc30bc639c6de6799d6477a01d93c393575c39&=&format=webp&quality=lossless" alt="PBE Logo">
             </div>
@@ -477,28 +465,6 @@
                         <div class="mini-progress-bar"></div>
                         <span>ONLINE</span>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Column: Threat Title + Lyrics Box -->
-        <div class="layout-right">
-            <h2 class="threat-title">THREAT TO EVERYONE</h2>
-
-            <!-- Scrolling Lyrics Ticker Box -->
-            <div class="lyrics-container">
-                <div class="lyrics-track">
-                    <div class="lyric-line highlight">✦ Moving through the underground</div>
-                    <div class="lyric-line">✦ No rules, just raw design</div>
-                    <div class="lyric-line">✦ Building the empire from the dark</div>
-                    <div class="lyric-line highlight">✦ Threat to everyone in sight</div>
-                    <div class="lyric-line">✦ PBE collective taking over</div>
-                    <!-- Loop repetition for smooth infinite ticker -->
-                    <div class="lyric-line highlight">✦ Moving through the underground</div>
-                    <div class="lyric-line">✦ No rules, just raw design</div>
-                    <div class="lyric-line">✦ Building the empire from the dark</div>
-                    <div class="lyric-line highlight">✦ Threat to everyone in sight</div>
-                    <div class="lyric-line">✦ PBE collective taking over</div>
                 </div>
             </div>
         </div>
