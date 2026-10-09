@@ -117,7 +117,7 @@
             opacity: 0.85;
         }
 
-        /* Main Balanced Layout Matching OZY Reference */
+        /* Main Balanced Layout (Switched Sides) */
         main {
             display: flex;
             justify-content: space-between;
@@ -130,66 +130,11 @@
             margin: 0 auto;
         }
 
-        /* Left Column: Massive Title + Subtitle + Action Buttons */
+        /* Left Column: Massive Logo Top + Wide Audio Player Bottom */
         .layout-left {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            width: 48%;
-        }
-
-        .threat-title {
-            font-size: clamp(3rem, 5vw, 5.5rem);
-            font-weight: 900;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #ffffff;
-            line-height: 0.95;
-            text-shadow: 0 5px 25px rgba(0,0,0,0.7);
-        }
-
-        .left-subtitle {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #aaa;
-            letter-spacing: 1px;
-            line-height: 1.5;
-            max-width: 450px;
-        }
-
-        .action-buttons-row {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .action-btn {
-            background: rgba(255, 255, 255, 0.08);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 12px 24px;
-            font-weight: 800;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-
-        .action-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .action-btn.primary {
-            background: #fff;
-            color: #000;
-        }
-
-        /* Right Column: Massive Logo Top + Wide Audio Player Bottom */
-        .layout-right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+            align-items: flex-start;
             gap: 40px;
             width: 48%;
         }
@@ -197,7 +142,7 @@
         .giant-pbe-logo {
             width: 100%;
             max-width: 520px;
-            text-align: right;
+            text-align: left;
         }
 
         .giant-pbe-logo img {
@@ -207,7 +152,7 @@
             filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
         }
 
-        /* Spotify-Style Player Card - Perfectly Proportional */
+        /* Spotify-Style Player Card */
         .spotify-card {
             width: 100%;
             max-width: 540px;
@@ -314,6 +259,63 @@
             background: #fff;
         }
 
+        /* Right Column: Massive Title + Subtitle + Action Buttons */
+        .layout-right {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 48%;
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .threat-title {
+            font-size: clamp(3rem, 5vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            line-height: 0.95;
+            text-shadow: 0 5px 25px rgba(0,0,0,0.7);
+        }
+
+        .right-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #aaa;
+            letter-spacing: 1px;
+            line-height: 1.5;
+            max-width: 450px;
+        }
+
+        .action-buttons-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 24px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .action-btn.primary {
+            background: #fff;
+            color: #000;
+        }
+
         /* Bottom Footer Bar */
         footer {
             padding: 20px 50px;
@@ -388,8 +390,6 @@
             .layout-left, .layout-right {
                 width: 100%;
                 align-items: flex-start;
-            }
-            .giant-pbe-logo {
                 text-align: left;
             }
             header, footer {
@@ -429,20 +429,10 @@
         </div>
     </header>
 
-    <!-- Main Content Area matching OZY proportions -->
+    <!-- Main Content Area (Switched Sides) -->
     <main>
-        <!-- Left Column: Massive Title + Subtitle / Info -->
+        <!-- Left Column: Massive Logo Top + Wide Audio Player Bottom -->
         <div class="layout-left">
-            <h1 class="threat-title">THREAT TO EVERYONE</h1>
-            <p class="left-subtitle">Find a PBE member, hear the uncopyrighted music, or explore the underground collective.</p>
-            <div class="action-buttons-row">
-                <a href="https://discord.gg/zHGBSdf4BQ" target="_blank" class="action-btn primary">DISCORD ↗</a>
-                <a href="#" onclick="openAboutModal(event)" class="action-btn">ABOUT US</a>
-            </div>
-        </div>
-
-        <!-- Right Column: Massive Logo Top + Wide Audio Player Bottom -->
-        <div class="layout-right">
             <div class="giant-pbe-logo">
                 <img src="https://media.discordapp.net/attachments/1375129451175608402/1557777551248859196/53142c9b-2b97-40ad-9b9b-8e750d686eab-removebg-preview.png?ex=6ac9b1a6&is=6ac86026&hm=d6eb815801818614f8906dd936cc30bc639c6de6799d6477a01d93c393575c39&=&format=webp&quality=lossless" alt="PBE Logo">
             </div>
@@ -466,6 +456,16 @@
                         <span>ONLINE</span>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Massive Title + Subtitle + Action Buttons -->
+        <div class="layout-right">
+            <h1 class="threat-title">THREAT TO EVERYONE</h1>
+            <p class="right-subtitle">Find a PBE member, hear the uncopyrighted music, or explore the underground collective.</p>
+            <div class="action-buttons-row">
+                <a href="https://discord.gg/zHGBSdf4BQ" target="_blank" class="action-btn primary">DISCORD ↗</a>
+                <a href="#" onclick="openAboutModal(event)" class="action-btn">ABOUT US</a>
             </div>
         </div>
     </main>
