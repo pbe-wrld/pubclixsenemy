@@ -117,56 +117,56 @@
             opacity: 0.85;
         }
 
-        /* Main Layout: Aligned precisely at the top */
+        /* Main Layout */
         main {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 60px;
-            padding: 40px 50px;
+            gap: 50px;
+            padding: 35px 50px;
             flex-grow: 1;
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
         }
 
-        /* Left Column */
+        /* Left Column - Enlarged */
         .layout-left {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            width: 45%;
+            gap: 25px;
+            width: 48%;
         }
 
         .giant-pbe-logo {
             width: 100%;
-            max-width: 420px;
+            max-width: 540px; /* Much bigger logo */
         }
 
         .giant-pbe-logo img {
             width: 100%;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.35));
+            filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.4));
         }
 
-        /* Spotify-Style Player Card */
+        /* Spotify-Style Player Card - Enlarged & Wider */
         .spotify-card {
             width: 100%;
-            max-width: 480px;
+            max-width: 540px; /* Matched to logo width */
             background: rgba(12, 12, 12, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(12px);
-            padding: 22px;
+            padding: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.8);
         }
 
         .spotify-header {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             color: #888;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-style: italic;
             font-weight: 600;
         }
@@ -175,14 +175,14 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 12px;
+            padding-bottom: 15px;
         }
 
         .album-art-small {
-            width: 75px;
-            height: 75px;
+            width: 85px;
+            height: 85px;
             background: #1a1a1a;
             border: 1px solid rgba(255, 255, 255, 0.15);
             flex-shrink: 0;
@@ -201,7 +201,7 @@
 
         .wide-banner-thumb {
             flex-grow: 1;
-            height: 75px;
+            height: 85px;
             background: #111;
             border: 1px solid rgba(255, 255, 255, 0.15);
             overflow: hidden;
@@ -222,16 +222,16 @@
             justify-content: space-between;
             background: rgba(0, 0, 0, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 14px 20px;
+            padding: 16px 24px;
         }
 
         .play-btn {
             background: #ffffff;
             color: #000000;
             border: none;
-            padding: 12px 26px;
+            padding: 14px 32px;
             font-weight: 900;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             letter-spacing: 2px;
             cursor: pointer;
             transition: opacity 0.2s;
@@ -244,7 +244,7 @@
         .player-meta {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
             font-size: 0.75rem;
             letter-spacing: 1.5px;
             color: #888;
@@ -252,7 +252,7 @@
         }
 
         .mini-progress-bar {
-            width: 100px;
+            width: 130px;
             height: 3px;
             background: #fff;
         }
@@ -262,7 +262,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            width: 50%;
+            width: 48%;
         }
 
         .threat-title {
@@ -273,14 +273,14 @@
             color: #ffffff;
             text-shadow: 0 5px 20px rgba(0,0,0,0.6);
             white-space: nowrap;
-            line-height: 1; /* Locks the line-height so the top aligns cleanly with the left logo */
+            line-height: 1;
         }
 
-        /* Longer & Wider Scrolling Lyrics Box */
+        /* Scrolling Lyrics Box */
         .lyrics-container {
             width: 100%;
             max-width: 650px;
-            height: 220px;
+            height: 240px;
             background: rgba(12, 12, 12, 0.65);
             border: 1px solid rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
@@ -453,7 +453,7 @@
 
     <!-- Main Content Area -->
     <main>
-        <!-- Left Column: Logo + Player Card -->
+        <!-- Left Column: Larger Logo + Enlarged Player Card -->
         <div class="layout-left">
             <div class="giant-pbe-logo">
                 <img src="https://media.discordapp.net/attachments/1375129451175608402/1557777551248859196/53142c9b-2b97-40ad-9b9b-8e750d686eab-removebg-preview.png?ex=6ac9b1a6&is=6ac86026&hm=d6eb815801818614f8906dd936cc30bc639c6de6799d6477a01d93c393575c39&=&format=webp&quality=lossless" alt="PBE Logo">
