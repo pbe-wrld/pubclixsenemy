@@ -117,31 +117,31 @@
             opacity: 0.85;
         }
 
-        /* Main Balanced Layout (Mas pinalapit at mas malaki para mawala ang gitnang space) */
+        /* Main Balanced Layout (In-adjust para mas lumapit sa gitna) */
         main {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: flex-start;
-            gap: 40px;
-            padding: 40px 60px;
+            gap: 80px;
+            padding: 40px 40px;
             flex-grow: 1;
             width: 100%;
-            max-width: 1920px;
+            max-width: 1550px;
             margin: 0 auto;
         }
 
-        /* Left Column: Mas pinalaki at pinalawak */
+        /* Left Column */
         .layout-left {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 35px;
-            width: 52%;
+            width: 48%;
         }
 
         .giant-pbe-logo {
             width: 100%;
-            max-width: 640px; /* Mas pinalaki */
+            max-width: 620px;
             text-align: left;
         }
 
@@ -152,10 +152,10 @@
             filter: drop-shadow(0 0 45px rgba(255, 255, 255, 0.45));
         }
 
-        /* Spotify-Style Player Card - Mas pinalaki rin */
+        /* Spotify-Style Player Card */
         .spotify-card {
             width: 100%;
-            max-width: 640px; /* Pantay sa bagong laki ng logo */
+            max-width: 620px;
             background: rgba(12, 12, 12, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(12px);
@@ -259,12 +259,12 @@
             background: #fff;
         }
 
-        /* Right Column: Mas malaki at balanse rin */
+        /* Right Column */
         .layout-right {
             display: flex;
             flex-direction: column;
             gap: 25px;
-            width: 42%;
+            width: 44%;
             align-items: flex-end;
             text-align: right;
         }
@@ -431,7 +431,7 @@
 
     <!-- Main Content Area -->
     <main>
-        <!-- Left Column: PBE Logo (Bagong Cropped Image) + Audio Player -->
+        <!-- Left Column: PBE Logo + Audio Player -->
         <div class="layout-left">
             <div class="giant-pbe-logo">
                 <img src="https://media.discordapp.net/attachments/1375129451175608402/1558185348985528390/content.png?ex=6aca84b0&is=6ac93330&hm=8f341f092d7b5230a2726af6685e6feb6e41d4313d3a4ff8b3f435184e874104&=&format=webp&quality=lossless&width=1536&height=769" alt="PBE Logo">
