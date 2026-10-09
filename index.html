@@ -117,7 +117,7 @@
             opacity: 0.85;
         }
 
-        /* Main Balanced Layout (Switched Sides) */
+        /* Main Balanced Layout */
         main {
             display: flex;
             justify-content: space-between;
@@ -143,12 +143,15 @@
             width: 100%;
             max-width: 520px;
             text-align: left;
+            overflow: hidden; /* Sinisigurong hindi lumampas sa box ang scale */
         }
 
         .giant-pbe-logo img {
             width: 100%;
             height: auto;
             object-fit: contain;
+            transform: scale(1.35); /* Automatic na nag-aalis ng transparent padding/space */
+            transform-origin: left center;
             filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.4));
         }
 
@@ -429,7 +432,7 @@
         </div>
     </header>
 
-    <!-- Main Content Area (Switched Sides) -->
+    <!-- Main Content Area -->
     <main>
         <!-- Left Column: Massive Logo Top + Wide Audio Player Bottom -->
         <div class="layout-left">
