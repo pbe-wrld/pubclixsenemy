@@ -90,7 +90,7 @@
             font-weight: 500;
         }
 
-        /* Main Balanced Layout - Pinaglapit ang gap para mas nasa gitna */
+        /* Main Balanced Layout */
         main {
             display: flex;
             justify-content: center;
@@ -235,11 +235,11 @@
             transition: height 0.1s ease;
         }
 
-        /* Right Column - Inalis ang negative margin para hindi sumobra sa kanan */
+        /* Right Column */
         .layout-right {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 15px;
             width: 44%;
             align-items: flex-end;
             text-align: right;
@@ -259,32 +259,14 @@
                          0 5px 30px rgba(0, 0, 0, 0.9);
         }
 
-        .action-buttons-row {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .action-btn {
-            background: rgba(255, 255, 255, 0.08);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 12px 26px;
-            font-weight: 800;
+        /* Small thin scroll down text styling */
+        .scroll-down-text {
             font-size: 0.75rem;
+            font-weight: 300;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-
-        .action-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .action-btn.primary {
-            background: #fff;
-            color: #000;
+            color: #777;
+            text-transform: lowercase;
+            margin-top: 5px;
         }
 
         /* Bottom Footer Bar */
@@ -428,13 +410,10 @@
             </div>
         </div>
 
-        <!-- Right Column: Threat to Everyone Title + Action Buttons -->
+        <!-- Right Column: Threat to Everyone Title + Scroll Down Text -->
         <div class="layout-right">
             <h1 class="threat-title">threat to everyone</h1>
-            <div class="action-buttons-row">
-                <a href="https://discord.gg/zHGBSdf4BQ" target="_blank" class="action-btn primary">DISCORD ↗</a>
-                <a href="#" onclick="openAboutModal(event)" class="action-btn">ABOUT US</a>
-            </div>
+            <div class="scroll-down-text">--------- scroll down below</div>
         </div>
     </main>
 
