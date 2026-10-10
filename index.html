@@ -111,7 +111,7 @@
                 <a href="#profiles">Profiles</a>
                 <a href="https://discord.gg/zHGBSdf4BQ" target="_blank">Discord</a>
             </nav>
-            <div class="visitor-counter">Views: <span id="viewCount">1,433</span></div>
+            <div class="visitor-counter">Views: <span id="viewCount">200</span></div>
         </div>
     </header>
 
@@ -202,8 +202,17 @@
             } else { beatBar.style.height = '3px'; }
         }, 100);
 
+        // Visitor Counter Logic: Nag-i-increment ng +1 bawat pasok/refresh
         window.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('viewCount').textContent = (1433 + Math.floor(Math.random() * 5)).toLocaleString();
+            let views = localStorage.getItem('pbe_views');
+            if (!views) {
+                views = 200; // Magsisimula sa 200 kung wala pang record
+            } else {
+                views = parseInt(views) + 1; // Tataas ng 1 bawat bukas ng site
+            }
+            localStorage.setItem('pbe_views', views);
+            document.getElementById('viewCount').textContent = views.toLocaleString();
+            
             loadProfiles();
         });
 
