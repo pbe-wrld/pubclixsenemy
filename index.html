@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -26,10 +27,10 @@
             flex-direction: column;
             justify-content: space-between;
             overflow-x: hidden;
-            padding-top: 70px; /* Space para sa fixed header */
+            padding-top: 60px;
         }
 
-        /* Top Navigation Bar - Fixed sa Taas */
+        /* Top Navigation Bar - Fixed */
         header {
             position: fixed;
             top: 0;
@@ -106,17 +107,17 @@
             font-weight: 500;
         }
 
-        /* Main Balanced Layout */
-        main {
+        /* Main Screen Section (Hero Area) */
+        .hero-section {
             display: flex;
             justify-content: center;
             align-items: flex-start;
             gap: 70px;
-            padding: 40px 25px;
-            flex-grow: 1;
+            padding: 40px 25px 80px 25px;
             width: 100%;
             max-width: 1300px;
             margin: 0 auto;
+            min-height: calc(100vh - 120px);
         }
 
         /* Left Column */
@@ -242,7 +243,6 @@
             text-transform: uppercase;
         }
 
-        /* Green Equalizer / Beat Bar Styling */
         .mini-progress-bar {
             width: 150px;
             height: 3px;
@@ -284,6 +284,74 @@
             margin-top: 5px;
         }
 
+        /* ================= PROFILES SECTION (Pag nag-scroll down) ================= */
+        .profiles-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 100px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profiles-main-title {
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: lowercase;
+            color: #ffffff;
+            margin-bottom: 50px;
+            text-align: center;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 1);
+        }
+
+        .section-container {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .section-heading {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 8px;
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .lanyard-card {
+            width: 100%;
+            background: rgba(12, 12, 12, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            padding: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            transition: border-color 0.2s ease;
+        }
+
+        .lanyard-card:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .lanyard-card img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 4px;
+        }
+
         /* Bottom Footer Bar */
         footer {
             padding: 20px 50px;
@@ -300,7 +368,7 @@
 
         /* Responsive Design */
         @media (max-width: 1100px) {
-            main {
+            .hero-section {
                 flex-direction: column;
                 gap: 40px;
                 padding: 30px 20px;
@@ -334,8 +402,8 @@
         </div>
         <div class="nav-right-container">
             <nav>
-                <a href="index.html" class="active">Home</a>
-                <a href="profiles.html">Profiles</a>
+                <a href="#home" class="active">Home</a>
+                <a href="#profiles">Profiles</a>
                 <a href="https://discord.gg/zHGBSdf4BQ" target="_blank">Discord</a>
             </nav>
             <div class="visitor-counter">
@@ -344,8 +412,8 @@
         </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main>
+    <!-- HERO SECTION (Main View) -->
+    <section class="hero-section" id="home">
         <!-- Left Column: PBE Logo + Audio Player -->
         <div class="layout-left">
             <div class="giant-pbe-logo">
@@ -379,7 +447,54 @@
             <h1 class="threat-title">threat to everyone</h1>
             <div class="quote-text">we dont start shit, we finish it.</div>
         </div>
-    </main>
+    </section>
+
+    <!-- PROFILES SECTION (Kapag nag-scroll down) -->
+    <section class="profiles-section" id="profiles">
+        <h1 class="profiles-main-title">collective roster</h1>
+
+        <!-- FOUNDER SECTION -->
+        <div class="section-container">
+            <h2 class="section-heading">Founders</h2>
+            <div class="profiles-grid">
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1045740438147051541" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/516925138407653386" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1393821550142296145" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1162109122242691082" alt="Discord Status"></div>
+            </div>
+        </div>
+
+        <!-- THREATS SECTION -->
+        <div class="section-container">
+            <h2 class="section-heading">Threats</h2>
+            <div class="profiles-grid">
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1512087904715800629" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1473659382800584855" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1492561000782893088" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1407329376063979550" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1313118367439130624" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1450026770186240080" alt="Discord Status"></div>
+            </div>
+        </div>
+
+        <!-- ENEMIES SECTION -->
+        <div class="section-container">
+            <h2 class="section-heading">Enemies</h2>
+            <div class="profiles-grid">
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1333235917259014248" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1429645202930274407" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1469138009042718762" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1543579909060956192" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1417155995460829246" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1494609700258447503" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1538721869061169282" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/543782681796804629" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1459753290433564724" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1437066666411556984" alt="Discord Status"></div>
+                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1181148533991157854" alt="Discord Status"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Bottom Footer Bar -->
     <footer>
