@@ -31,26 +31,13 @@
         /* Top Navigation Bar */
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             padding: 25px 50px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(8px);
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-text {
-            font-weight: 900;
-            letter-spacing: 2px;
-            font-size: 1.1rem;
-            color: #fff;
-            text-transform: uppercase;
+            gap: 35px;
         }
 
         nav {
@@ -99,24 +86,6 @@
         .visitor-counter span {
             color: #fff;
             font-weight: 700;
-        }
-
-        .nav-btn {
-            background: #ffffff;
-            color: #000000;
-            padding: 9px 20px;
-            font-weight: 700;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: opacity 0.2s ease;
-            text-decoration: none;
-        }
-
-        .nav-btn:hover {
-            opacity: 0.85;
         }
 
         /* Main Balanced Layout */
@@ -363,7 +332,6 @@
         }
 
         .modal-content p {
-            data-text: #aaa;
             color: #aaa;
             font-size: 0.9rem;
             line-height: 1.6;
@@ -400,6 +368,7 @@
                 padding-right: 20px;
                 flex-direction: column;
                 gap: 15px;
+                align-items: center;
             }
             nav {
                 gap: 15px;
@@ -416,9 +385,6 @@
 
     <!-- Header Section -->
     <header>
-        <div class="logo-area">
-            <span class="logo-text">Public Enemy</span>
-        </div>
         <nav>
             <a href="#" class="active">Home</a>
             <a href="https://discord.gg/zHGBSdf4BQ" target="_blank">Discord</a>
@@ -428,7 +394,6 @@
             <div class="visitor-counter">
                 Views: <span id="viewCount">1,433</span>
             </div>
-            <a href="https://discord.gg/zHGBSdf4BQ" target="_blank" class="nav-btn">Join Server</a>
         </div>
     </header>
 
@@ -517,7 +482,6 @@
         // Dynamic beat pulse animation for the green line
         setInterval(() => {
             if (!audio.paused) {
-                // Random height simulation for beat reactions (gagalaw pataas/pababa)
                 const randomHeight = Math.floor(Math.random() * 12) + 3; 
                 beatBar.style.height = randomHeight + 'px';
             } else {
