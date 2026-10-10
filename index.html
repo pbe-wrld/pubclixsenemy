@@ -46,7 +46,23 @@
         .layout-right { display: flex; flex-direction: column; gap: 15px; width: 44%; align-items: flex-end; text-align: right; }
         .threat-title { font-family: 'Anton', sans-serif; font-size: clamp(3.5rem, 6vw, 6.5rem); font-weight: 400; letter-spacing: 1.5px; text-transform: lowercase; color: #ffffff; line-height: 0.95; text-shadow: 3px 3px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(0, 0, 0, 1), 0 0 25px rgba(255, 255, 255, 0.35); }
         .quote-text { font-size: 0.75rem; font-weight: 300; letter-spacing: 1.5px; color: #777; text-transform: lowercase; margin-top: 5px; }
-        .profiles-section { width: 100%; max-width: 1200px; margin: 0 auto; padding: 60px 20px 100px 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        /* Dito nakalagay ang background2 para sa Profiles section */
+        .profiles-section { 
+            width: 100%; 
+            max-width: 100%; 
+            margin: 0 auto; 
+            padding: 80px 20px 120px 20px; 
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)), url('background2.png');
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+        }
+        .profiles-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
         .profiles-main-title { font-family: 'Anton', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; letter-spacing: 1.5px; text-transform: lowercase; color: #ffffff; margin-bottom: 50px; text-align: center; text-shadow: 3px 3px 0px rgba(0, 0, 0, 1); }
         .section-container { width: 100%; margin-bottom: 50px; }
         .section-heading { font-family: 'Anton', sans-serif; font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase; color: #fff; margin-bottom: 25px; border-bottom: 1px solid rgba(255, 255, 255, 0.15); padding-bottom: 8px; }
@@ -112,18 +128,20 @@
     </section>
 
     <section class="profiles-section" id="profiles">
-        <h1 class="profiles-main-title">collective roster</h1>
-        <div class="section-container">
-            <h2 class="section-heading">Founders</h2>
-            <div class="profiles-grid" id="founders-grid"></div>
-        </div>
-        <div class="section-container">
-            <h2 class="section-heading">Threats</h2>
-            <div class="profiles-grid" id="threats-grid"></div>
-        </div>
-        <div class="section-container">
-            <h2 class="section-heading">Enemies</h2>
-            <div class="profiles-grid" id="enemies-grid"></div>
+        <div class="profiles-inner">
+            <h1 class="profiles-main-title">collective roster</h1>
+            <div class="section-container">
+                <h2 class="section-heading">Founders</h2>
+                <div class="profiles-grid" id="founders-grid"></div>
+            </div>
+            <div class="section-container">
+                <h2 class="section-heading">Threats</h2>
+                <div class="profiles-grid" id="threats-grid"></div>
+            </div>
+            <div class="section-container">
+                <h2 class="section-heading">Enemies</h2>
+                <div class="profiles-grid" id="enemies-grid"></div>
+            </div>
         </div>
     </section>
 
