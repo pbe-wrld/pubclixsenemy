@@ -31,12 +31,29 @@
         /* Top Navigation Bar */
         header {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
-            padding: 12px 40px;
+            padding: 10px 40px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(8px);
+        }
+
+        .nav-logo-area {
+            display: flex;
+            align-items: center;
+            height: 35px;
+        }
+
+        .nav-logo-area img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-right-container {
+            display: flex;
+            align-items: center;
             gap: 35px;
         }
 
@@ -259,7 +276,6 @@
                          0 5px 30px rgba(0, 0, 0, 0.9);
         }
 
-        /* Updated Small Thin Quote Text */
         .quote-text {
             font-size: 0.75rem;
             font-weight: 300;
@@ -353,6 +369,10 @@
                 gap: 15px;
                 align-items: center;
             }
+            .nav-right-container {
+                flex-direction: column;
+                gap: 15px;
+            }
             nav {
                 gap: 15px;
                 flex-wrap: wrap;
@@ -368,14 +388,19 @@
 
     <!-- Header Section -->
     <header>
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="https://discord.gg/zHGBSdf4BQ" target="_blank">Discord</a>
-            <a href="#" onclick="openAboutModal(event)">About</a>
-        </nav>
-        <div class="nav-right-group">
-            <div class="visitor-counter">
-                Views: <span id="viewCount">1,433</span>
+        <div class="nav-logo-area">
+            <img src="https://media.discordapp.net/attachments/1375129451175608402/1558380926910599248/image-removebg-preview.png?ex=6acb3ad6&is=6ac9e956&hm=7ef41e7acd46ed29724d63904bd6dfd46ff3af63be6552bfe74ea18b6ee0cf58&=&format=webp&quality=lossless" alt="PBE Logo">
+        </div>
+        <div class="nav-right-container">
+            <nav>
+                <a href="#" class="active">Home</a>
+                <a href="https://discord.gg/zHGBSdf4BQ" target="_blank">Discord</a>
+                <a href="#" onclick="openAboutModal(event)">About</a>
+            </nav>
+            <div class="nav-right-group">
+                <div class="visitor-counter">
+                    Views: <span id="viewCount">1,433</span>
+                </div>
             </div>
         </div>
     </header>
