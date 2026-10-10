@@ -107,7 +107,7 @@
             font-weight: 500;
         }
 
-        /* Main Screen Section (Hero Area) */
+        /* Hero Section */
         .hero-section {
             display: flex;
             justify-content: center;
@@ -120,7 +120,6 @@
             min-height: calc(100vh - 120px);
         }
 
-        /* Left Column */
         .layout-left {
             display: flex;
             flex-direction: column;
@@ -142,7 +141,6 @@
             filter: drop-shadow(0 0 45px rgba(255, 255, 255, 0.45));
         }
 
-        /* Spotify-Style Player Card */
         .spotify-card {
             width: 100%;
             max-width: 620px;
@@ -251,7 +249,6 @@
             transition: height 0.1s ease;
         }
 
-        /* Right Column */
         .layout-right {
             display: flex;
             flex-direction: column;
@@ -284,7 +281,7 @@
             margin-top: 5px;
         }
 
-        /* ================= PROFILES SECTION (Pag nag-scroll down) ================= */
+        /* Profiles Section Styling */
         .profiles-section {
             width: 100%;
             max-width: 1200px;
@@ -323,36 +320,72 @@
 
         .profiles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             width: 100%;
         }
 
-        .lanyard-card {
-            width: 100%;
+        /* Clean Custom Profile Card */
+        .profile-card {
             background: rgba(12, 12, 12, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(12px);
-            padding: 12px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.7);
-            border-radius: 6px;
+            padding: 16px 20px;
             display: flex;
-            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+            border-radius: 6px;
             transition: border-color 0.2s ease;
         }
 
-        .lanyard-card:hover {
+        .profile-card:hover {
             border-color: rgba(255, 255, 255, 0.3);
         }
 
-        .lanyard-card img {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            border-radius: 4px;
+        .avatar-box {
+            width: 48px;
+            height: 48px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #fff;
+            flex-shrink: 0;
+            overflow: hidden;
         }
 
-        /* Bottom Footer Bar */
+        .avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            overflow: hidden;
+        }
+
+        .profile-id {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .profile-status {
+            font-size: 0.7rem;
+            color: #888;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
         footer {
             padding: 20px 50px;
             display: flex;
@@ -366,7 +399,6 @@
             background: rgba(0, 0, 0, 0.5);
         }
 
-        /* Responsive Design */
         @media (max-width: 1100px) {
             .hero-section {
                 flex-direction: column;
@@ -392,10 +424,8 @@
 </head>
 <body>
 
-    <!-- Audio Element with Autoplay and Loop -->
     <audio id="audioPlayer" src="lv_0_20260809194350.mp3" autoplay loop></audio>
 
-    <!-- Header Section -->
     <header>
         <div class="nav-logo-area">
             <img src="https://media.discordapp.net/attachments/1375129451175608402/1558380926910599248/image-removebg-preview.png?ex=6acb3ad6&is=6ac9e956&hm=7ef41e7acd46ed29724d63904bd6dfd46ff3af63be6552bfe74ea18b6ee0cf58&=&format=webp&quality=lossless" alt="PBE Logo">
@@ -412,15 +442,12 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Main View) -->
     <section class="hero-section" id="home">
-        <!-- Left Column: PBE Logo + Audio Player -->
         <div class="layout-left">
             <div class="giant-pbe-logo">
                 <img src="https://media.discordapp.net/attachments/1375129451175608402/1558185348985528390/content.png?ex=6aca84b0&is=6ac93330&hm=8f341f092d7b5230a2726af6685e6feb6e41d4313d3a4ff8b3f435184e874104&=&format=webp&quality=lossless&width=1536&height=769" alt="PBE Logo">
             </div>
 
-            <!-- Spotify-Style Audio Player Card -->
             <div class="spotify-card">
                 <div class="spotify-header">TAKOT</div>
                 <div class="song-info-area">
@@ -442,61 +469,59 @@
             </div>
         </div>
 
-        <!-- Right Column: Threat to Everyone Title + Quote Text -->
         <div class="layout-right">
             <h1 class="threat-title">threat to everyone</h1>
             <div class="quote-text">we dont start shit, we finish it.</div>
         </div>
     </section>
 
-    <!-- PROFILES SECTION (Kapag nag-scroll down) -->
+    <!-- PROFILES SECTION -->
     <section class="profiles-section" id="profiles">
         <h1 class="profiles-main-title">collective roster</h1>
 
-        <!-- FOUNDER SECTION -->
+        <!-- FOUNDERS -->
         <div class="section-container">
             <h2 class="section-heading">Founders</h2>
             <div class="profiles-grid">
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1045740438147051541" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/516925138407653386" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1393821550142296145" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1162109122242691082" alt="Discord Status"></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1045740438147051541</span><span class="profile-status">Founder</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 516925138407653386</span><span class="profile-status">Founder</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1393821550142296145</span><span class="profile-status">Founder</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1162109122242691082</span><span class="profile-status">Founder</span></div></div>
             </div>
         </div>
 
-        <!-- THREATS SECTION -->
+        <!-- THREATS -->
         <div class="section-container">
             <h2 class="section-heading">Threats</h2>
             <div class="profiles-grid">
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1512087904715800629" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1473659382800584855" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1492561000782893088" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1407329376063979550" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1313118367439130624" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1450026770186240080" alt="Discord Status"></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1512087904715800629</span><span class="profile-status">Threat</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1473659382800584855</span><span class="profile-status">Threat</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1492561000782893088</span><span class="profile-status">Threat</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1407329376063979550</span><span class="profile-status">Threat</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1313118367439130624</span><span class="profile-status">Threat</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1450026770186240080</span><span class="profile-status">Threat</span></div></div>
             </div>
         </div>
 
-        <!-- ENEMIES SECTION -->
+        <!-- ENEMIES -->
         <div class="section-container">
             <h2 class="section-heading">Enemies</h2>
             <div class="profiles-grid">
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1333235917259014248" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1429645202930274407" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1469138009042718762" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1543579909060956192" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1417155995460829246" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1494609700258447503" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1538721869061169282" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/543782681796804629" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1459753290433564724" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1437066666411556984" alt="Discord Status"></div>
-                <div class="lanyard-card"><img src="https://lanyard.cnrad.dev/api/1181148533991157854" alt="Discord Status"></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1333235917259014248</span><span class="profile-status">Enemy</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1429645202930274407</span><span class="profile-status">Enemy</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1469138009042718762</span><span class="profile-status">Enemy</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1543579909060956192</span><span class="profile-status">Enemy</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1417155995460829246</span><span class="profile-status">Enemy</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1494609700258447503</span><span class="profile-status">Enemy</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1538721869061169282</span><span class="profile-status">Enemy</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 543782681796804629</span><span class="profile-status">Enemy</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1459753290433564724</span><span class="profile-status">Enemy</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1437066666411556984</span><span class="profile-status">Enemy</span></div></div>
+                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1181148533991157854</span><span class="profile-status">Enemy</span></div></div>
             </div>
         </div>
     </section>
 
-    <!-- Bottom Footer Bar -->
     <footer>
         <div>Public Enemy Collective © 2026</div>
         <div>All Rights Reserved</div>
@@ -509,22 +534,14 @@
 
         function togglePlay() {
             if (audio.paused) {
-                audio.play().then(() => {
-                    playBtn.textContent = 'PAUSE';
-                }).catch(e => {});
+                audio.play().then(() => { playBtn.textContent = 'PAUSE'; }).catch(e => {});
             } else {
-                audio.pause();
-                playBtn.textContent = 'PLAY';
-                beatBar.style.height = '3px';
+                audio.pause(); playBtn.textContent = 'PLAY'; beatBar.style.height = '3px';
             }
         }
 
         document.addEventListener('click', function initAudio() {
-            if (audio.paused) {
-                audio.play().then(() => {
-                    playBtn.textContent = 'PAUSE';
-                }).catch(e => {});
-            }
+            if (audio.paused) { audio.play().then(() => { playBtn.textContent = 'PAUSE'; }).catch(e => {}); }
             document.removeEventListener('click', initAudio);
         }, { once: true });
 
@@ -532,9 +549,7 @@
             if (!audio.paused) {
                 const randomHeight = Math.floor(Math.random() * 12) + 3; 
                 beatBar.style.height = randomHeight + 'px';
-            } else {
-                beatBar.style.height = '3px';
-            }
+            } else { beatBar.style.height = '3px'; }
         }, 100);
 
         window.addEventListener('DOMContentLoaded', () => {
@@ -542,6 +557,5 @@
             document.getElementById('viewCount').textContent = views.toLocaleString();
         });
     </script>
-
 </body>
 </html>
