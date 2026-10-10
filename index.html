@@ -255,10 +255,13 @@
             text-transform: uppercase;
         }
 
+        /* Green Equalizer / Beat Bar Styling */
         .mini-progress-bar {
             width: 150px;
             height: 3px;
-            background: #fff;
+            background: #00ff66;
+            box-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
+            transition: height 0.1s ease;
         }
 
         /* Right Column */
@@ -360,6 +363,7 @@
         }
 
         .modal-content p {
+            data-text: #aaa;
             color: #aaa;
             font-size: 0.9rem;
             line-height: 1.6;
@@ -383,7 +387,7 @@
             main {
                 flex-direction: column;
                 gap: 40px;
-                padding: zpx 20px;
+                padding: 30px 20px;
             }
             .layout-left, .layout-right {
                 width: 100%;
@@ -407,7 +411,7 @@
 </head>
 <body>
 
-    <!-- Audio Element with Autoplay attribute -->
+    <!-- Audio Element with Autoplay and Loop -->
     <audio id="audioPlayer" src="lv_0_20260809194350.mp3" autoplay loop></audio>
 
     <!-- Header Section -->
@@ -451,7 +455,7 @@
                     <button class="play-btn" id="playBtn" onclick="togglePlay()">PAUSE</button>
                     <div class="player-meta">
                         <span>STATUS</span>
-                        <div class="mini-progress-bar"></div>
+                        <div class="mini-progress-bar" id="beatBar"></div>
                         <span>ONLINE</span>
                     </div>
                 </div>
@@ -486,21 +490,21 @@
     <script>
         const audio = document.getElementById('audioPlayer');
         const playBtn = document.getElementById('playBtn');
+        const beatBar = document.getElementById('beatBar');
 
         function togglePlay() {
             if (audio.paused) {
                 audio.play().then(() => {
                     playBtn.textContent = 'PAUSE';
-                }).catch(e => {
-                    console.log("Playback prevented");
-                });
+                }).catch(e => {});
             } else {
                 audio.pause();
                 playBtn.textContent = 'PLAY';
+                beatBar.style.height = '3px';
             }
         }
 
-        // Auto-play on first user interaction anywhere on the page to bypass browser restrictions
+        // Auto-play on first user interaction anywhere on the page
         document.addEventListener('click', function initAudio() {
             if (audio.paused) {
                 audio.play().then(() => {
@@ -510,10 +514,16 @@
             document.removeEventListener('click', initAudio);
         }, { once: true });
 
-        function openAboutModal(e) {
-            e.preventDefault();
-            document.getElementById('aboutModalstyle').style.display = 'flex'; // fixed typo reference
-        }
+        // Dynamic beat pulse animation for the green line
+        setInterval(() => {
+            if (!audio.paused) {
+                // Random height simulation for beat reactions (gagalaw pataas/pababa)
+                const randomHeight = Math.floor(Math.random() * 12) + 3; 
+                beatBar.style.height = randomHeight + 'px';
+            } else {
+                beatBar.style.height = '3px';
+            }
+        }, 100);
 
         function openAboutModal(e) {
             e.preventDefault();
