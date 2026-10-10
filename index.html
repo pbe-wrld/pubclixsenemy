@@ -4,76 +4,337 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PBE / threat to everyone</title>
+    <!-- Import Google Font for Street Aesthetic -->
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-color: #080808;
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)), url('https://media.discordapp.net/attachments/1375129451175608402/1557773782985478164/content.png?ex=6ac9ae23&is=6ac85ca3&hm=bee6fbcaeda327c8045304f100c30c1af9b44f84dc5267b399bd40cfef8af3c5&=&format=webp&quality=lossless&width=1280&height=722');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; overflow-x: hidden;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            padding-top: 70px; /* Space para sa fixed header */
         }
+
+        /* Top Navigation Bar - Fixed sa Taas */
         header {
-            display: flex; justify-content: space-between; align-items: center; padding: 10px 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(12px);
         }
-        .nav-logo-area { display: flex; align-items: center; height: 35px; }
-        .nav-logo-area img { height: 100%; width: auto; object-fit: contain; }
-        .nav-right-container { display: flex; align-items: center; gap: 35px; }
-        nav { display: flex; align-items: center; gap: 30px; }
+
+        .nav-logo-area {
+            display: flex;
+            align-items: center;
+            height: 35px;
+        }
+
+        .nav-logo-area img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-right-container {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
         nav a {
-            color: #a0a0a0; text-decoration: none; font-size: 0.8rem; font-weight: 400;
-            letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s ease;
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
-        nav a:hover, nav a.active { color: #ffffff; font-weight: 500; }
+
+        nav a:hover, nav a.active {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
         .visitor-counter {
-            display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 300;
-            letter-spacing: 1.5px; color: #888; background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1); padding: 6px 12px; text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            color: #888;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            text-transform: uppercase;
         }
-        .visitor-counter span { color: #fff; font-weight: 500; }
+
+        .visitor-counter span {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* Main Balanced Layout */
         main {
-            display: flex; justify-content: center; align-items: flex-start; gap: 70px;
-            padding: 40px 25px; flex-grow: 1; width: 100%; max-width: 1300px; margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 70px;
+            padding: 40px 25px;
+            flex-grow: 1;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
         }
-        .layout-left { display: flex; flex-direction: column; align-items: flex-start; gap: 35px; width: 48%; }
-        .giant-pbe-logo { width: 100%; max-width: 620px; text-align: left; }
-        .giant-pbe-logo img { width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 0 45px rgba(255, 255, 255, 0.45)); }
+
+        /* Left Column */
+        .layout-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 35px;
+            width: 48%;
+        }
+
+        .giant-pbe-logo {
+            width: 100%;
+            max-width: 620px;
+            text-align: left;
+        }
+
+        .giant-pbe-logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 45px rgba(255, 255, 255, 0.45));
+        }
+
+        /* Spotify-Style Player Card */
         .spotify-card {
-            width: 100%; max-width: 620px; background: rgba(12, 12, 12, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px); padding: 26px; box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            width: 100%;
+            max-width: 620px;
+            background: rgba(12, 12, 12, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 26px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
         }
-        .spotify-header { font-size: 0.8rem; letter-spacing: 2px; color: #888; text-transform: uppercase; margin-bottom: 12px; font-style: italic; font-weight: 600; }
-        .song-info-area { display: flex; align-items: center; gap: 15px; margin-bottom: 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 15px; }
-        .album-art-small { width: 90px; height: 90px; background: #1a1a1a; border: 1px solid rgba(255, 255, 255, 0.15); flex-shrink: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 5px; }
-        .album-art-small img { width: 100%; height: 100%; object-fit: contain; }
-        .wide-banner-thumb { flex-grow: 1; height: 90px; background: #111; border: 1px solid rgba(255, 255, 255, 0.15); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .wide-banner-thumb img { width: 100%; height: 100%; object-fit: cover; }
-        .player-interface { display: flex; align-items: center; justify-content: space-between; background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); padding: 16px 24px; }
-        .play-btn { background: #ffffff; color: #000000; border: none; padding: 14px 32px; font-weight: 900; font-size: 0.85rem; letter-spacing: 2px; cursor: pointer; }
-        .player-meta { display: flex; align-items: center; gap: 18px; font-size: 0.75rem; letter-spacing: 1.5px; color: #888; text-transform: uppercase; }
-        .mini-progress-bar { width: 150px; height: 3px; background: #00ff66; box-shadow: 0 0 10px rgba(0, 255, 102, 0.6); transition: height 0.1s ease; }
-        .layout-right { display: flex; flex-direction: column; gap: 15px; width: 44%; align-items: flex-end; text-align: right; }
+
+        .spotify-header {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .song-info-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 15px;
+        }
+
+        .album-art-small {
+            width: 90px;
+            height: 90px;
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+
+        .album-art-small img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .wide-banner-thumb {
+            flex-grow: 1;
+            height: 90px;
+            background: #111;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wide-banner-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .player-interface {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 24px;
+        }
+
+        .play-btn {
+            background: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 14px 32px;
+            font-weight: 900;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .play-btn:hover {
+            opacity: 0.85;
+        }
+
+        .player-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        /* Green Equalizer / Beat Bar Styling */
+        .mini-progress-bar {
+            width: 150px;
+            height: 3px;
+            background: #00ff66;
+            box-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
+            transition: height 0.1s ease;
+        }
+
+        /* Right Column */
+        .layout-right {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 44%;
+            align-items: flex-end;
+            text-align: right;
+        }
+
         .threat-title {
-            font-family: 'Anton', sans-serif; font-size: clamp(3.5rem, 6vw, 6.5rem); font-weight: 400;
-            letter-spacing: 1.5px; text-transform: lowercase; color: #ffffff; line-height: 0.95;
-            text-shadow: 3px 3px 0px rgba(0, 0, 0, 1), -2px -2px 0px rgba(0, 0, 0, 1), 0 0 25px rgba(255, 255, 255, 0.35), 0 5px 30px rgba(0, 0, 0, 0.9);
+            font-family: 'Anton', sans-serif;
+            font-size: clamp(3.5rem, 6vw, 6.5rem);
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: lowercase;
+            color: #ffffff;
+            line-height: 0.95;
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 1), 
+                         -2px -2px 0px rgba(0, 0, 0, 1), 
+                         0 0 25px rgba(255, 255, 255, 0.35),
+                         0 5px 30px rgba(0, 0, 0, 0.9);
         }
-        .quote-text { font-size: 0.75rem; font-weight: 300; letter-spacing: 1.5px; color: #777; text-transform: lowercase; margin-top: 5px; }
-        footer { padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.75rem; letter-spacing: 1.5px; color: #666; text-transform: uppercase; background: rgba(0, 0, 0, 0.5); }
+
+        .quote-text {
+            font-size: 0.75rem;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            color: #777;
+            text-transform: lowercase;
+            margin-top: 5px;
+        }
+
+        /* Bottom Footer Bar */
+        footer {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            color: #666;
+            text-transform: uppercase;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            main {
+                flex-direction: column;
+                gap: 40px;
+                padding: 30px 20px;
+            }
+            .layout-left, .layout-right {
+                width: 100%;
+                align-items: flex-start;
+                text-align: left;
+            }
+            header {
+                padding: 10px 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-right-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Audio Element with Autoplay and Loop -->
     <audio id="audioPlayer" src="lv_0_20260809194350.mp3" autoplay loop></audio>
 
+    <!-- Header Section -->
     <header>
         <div class="nav-logo-area">
             <img src="https://media.discordapp.net/attachments/1375129451175608402/1558380926910599248/image-removebg-preview.png?ex=6acb3ad6&is=6ac9e956&hm=7ef41e7acd46ed29724d63904bd6dfd46ff3af63be6552bfe74ea18b6ee0cf58&=&format=webp&quality=lossless" alt="PBE Logo">
         </div>
         <div class="nav-right-container">
             <nav>
-                <a href="#" class="active">Home</a>
+                <a href="index.html" class="active">Home</a>
                 <a href="profiles.html">Profiles</a>
                 <a href="https://discord.gg/zHGBSdf4BQ" target="_blank">Discord</a>
             </nav>
@@ -83,12 +344,15 @@
         </div>
     </header>
 
+    <!-- Main Content Area -->
     <main>
+        <!-- Left Column: PBE Logo + Audio Player -->
         <div class="layout-left">
             <div class="giant-pbe-logo">
                 <img src="https://media.discordapp.net/attachments/1375129451175608402/1558185348985528390/content.png?ex=6aca84b0&is=6ac93330&hm=8f341f092d7b5230a2726af6685e6feb6e41d4313d3a4ff8b3f435184e874104&=&format=webp&quality=lossless&width=1536&height=769" alt="PBE Logo">
             </div>
 
+            <!-- Spotify-Style Audio Player Card -->
             <div class="spotify-card">
                 <div class="spotify-header">TAKOT</div>
                 <div class="song-info-area">
@@ -110,12 +374,14 @@
             </div>
         </div>
 
+        <!-- Right Column: Threat to Everyone Title + Quote Text -->
         <div class="layout-right">
             <h1 class="threat-title">threat to everyone</h1>
             <div class="quote-text">we dont start shit, we finish it.</div>
         </div>
     </main>
 
+    <!-- Bottom Footer Bar -->
     <footer>
         <div>Public Enemy Collective © 2026</div>
         <div>All Rights Reserved</div>
@@ -128,22 +394,32 @@
 
         function togglePlay() {
             if (audio.paused) {
-                audio.play().then(() => { playBtn.textContent = 'PAUSE'; }).catch(e => {});
+                audio.play().then(() => {
+                    playBtn.textContent = 'PAUSE';
+                }).catch(e => {});
             } else {
-                audio.pause(); playBtn.textContent = 'PLAY'; beatBar.style.height = '3px';
+                audio.pause();
+                playBtn.textContent = 'PLAY';
+                beatBar.style.height = '3px';
             }
         }
 
         document.addEventListener('click', function initAudio() {
-            if (audio.paused) { audio.play().then(() => { playBtn.textContent = 'PAUSE'; }).catch(e => {}); }
+            if (audio.paused) {
+                audio.play().then(() => {
+                    playBtn.textContent = 'PAUSE';
+                }).catch(e => {});
+            }
             document.removeEventListener('click', initAudio);
         }, { once: true });
 
         setInterval(() => {
             if (!audio.paused) {
-                const randomHeight = Math.floor(Math.random() * 12) + 3;
+                const randomHeight = Math.floor(Math.random() * 12) + 3; 
                 beatBar.style.height = randomHeight + 'px';
-            } else { beatBar.style.height = '3px'; }
+            } else {
+                beatBar.style.height = '3px';
+            }
         }, 100);
 
         window.addEventListener('DOMContentLoaded', () => {
@@ -151,5 +427,6 @@
             document.getElementById('viewCount').textContent = views.toLocaleString();
         });
     </script>
+
 </body>
 </html>
