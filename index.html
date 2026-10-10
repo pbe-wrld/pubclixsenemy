@@ -7,6 +7,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        
+        /* Loading Screen Overlay */
+        #loader-screen {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: #050505; color: #888888; z-index: 99999;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            font-family: monospace; font-size: 0.95rem; letter-spacing: 1px;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        .loader-content {
+            display: flex; flex-direction: column; align-items: flex-start; gap: 8px; width: 320px;
+        }
+        .loader-content span { display: block; }
+        .cursor { display: inline-block; width: 8px; height: 15px; background: #888; animation: blink 1s infinite; vertical-align: middle; margin-left: 4px; }
+        @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+        
+        #click-to-enter {
+            margin-top: 35px; color: #666; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+            cursor: pointer; opacity: 0; transition: opacity 0.4s ease; text-align: center; width: 100%;
+        }
+        #click-to-enter:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+
         body {
             background-color: #080808;
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url('background.png');
@@ -66,7 +88,6 @@
         }
         .profiles-inner { max-width: 1200px; margin: 0 auto; }
         
-        /* Istilo ng logo image sa ibabaw ng Profiles */
         .profiles-logo-container {
             text-align: center;
             margin-bottom: 50px;
@@ -99,7 +120,17 @@
 </head>
 <body>
 
-    <audio id="audioPlayer" src="lv_0_20260809194350.mp3" autoplay loop></audio>
+    <!-- Loading Screen Terminal Version -->
+    <div id="loader-screen">
+        <div class="loader-content">
+            <span id="line1"></span>
+            <span id="line2"></span>
+            <span id="line3"></span>
+            <div id="click-to-enter">[ click to enter ]</div>
+        </div>
+    </div>
+
+    <audio id="audioPlayer" src="lv_0_20260809194350.mp3" loop></audio>
 
     <header>
         <div class="nav-logo-area">
@@ -191,30 +222,43 @@
             else { audio.pause(); playBtn.textContent = 'PLAY'; beatBar.style.height = '3px'; }
         }
 
-        document.addEventListener('click', function initAudio() {
-            if (audio.paused) { audio.play().catch(() => {}); playBtn.textContent = 'PAUSE'; }
-            document.removeEventListener('click', initAudio);
-        }, { once: true });
+        // Loading Screen Typing Simulation & Enter Action
+        window.addEventListener('DOMContentLoaded', () => {
+            let views = localStorage.getItem('pbe_views');
+            if (!views) { views = 200; } else { views = parseInt(views) + 1; }
+            localStorage.setItem('pbe_views', views);
+            document.getElementById('viewCount').textContent = views.toLocaleString();
+            loadProfiles();
+
+            // Typewriter effect lines
+            const t1 = "[ok] initializing public_enemy.sys";
+            const t2 = "[ok] loading lanyard_core.dat";
+            const t3 = "$ auth --grant all<span class='cursor'></span>";
+
+            setTimeout(() => { document.getElementById('line1').innerHTML = t1; }, 200);
+            setTimeout(() => { document.getElementById('line2').innerHTML = t2; }, 700);
+            setTimeout(() => { 
+                document.getElementById('line3').innerHTML = t3; 
+                document.getElementById('click-to-enter').style.opacity = '1';
+            }, 1200);
+        });
+
+        // Pag-click sa loader para pumasok at mag-play ang audio
+        document.getElementById('loader-screen').addEventListener('click', () => {
+            const loader = document.getElementById('loader-screen');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 600);
+
+            // Simulan ang background music pagka-click
+            audio.play().catch(() => {});
+            playBtn.textContent = 'PAUSE';
+        });
 
         setInterval(() => {
             if (!audio.paused) {
                 beatBar.style.height = (Math.floor(Math.random() * 12) + 3) + 'px';
             } else { beatBar.style.height = '3px'; }
         }, 100);
-
-        // Visitor Counter Logic: Nag-i-increment ng +1 bawat pasok/refresh
-        window.addEventListener('DOMContentLoaded', () => {
-            let views = localStorage.getItem('pbe_views');
-            if (!views) {
-                views = 200; // Magsisimula sa 200 kung wala pang record
-            } else {
-                views = parseInt(views) + 1; // Tataas ng 1 bawat bukas ng site
-            }
-            localStorage.setItem('pbe_views', views);
-            document.getElementById('viewCount').textContent = views.toLocaleString();
-            
-            loadProfiles();
-        });
 
         const founders = ['1045740438147051541', '516925138407653386', '1393821550142296145', '1162109122242691082'];
         const threats = ['1512087904715800629', '1473659382800584855', '1492561000782893088', '1407329376063979550', '1313118367439130624', '1450026770186240080'];
