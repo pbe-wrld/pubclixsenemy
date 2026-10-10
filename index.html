@@ -325,7 +325,7 @@
             width: 100%;
         }
 
-        /* Clean Custom Profile Card */
+        /* Discord Profile Card */
         .profile-card {
             background: rgba(12, 12, 12, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -343,27 +343,35 @@
             border-color: rgba(255, 255, 255, 0.3);
         }
 
-        .avatar-box {
-            width: 48px;
-            height: 48px;
-            background: #1a1a1a;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-            color: #fff;
+        .avatar-container {
+            position: relative;
+            width: 50px;
+            height: 50px;
             flex-shrink: 0;
-            overflow: hidden;
         }
 
-        .avatar-box img {
+        .avatar-container img {
             width: 100%;
             height: 100%;
+            border-radius: 50%;
             object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
+
+        .status-dot {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid #0c0c0c;
+        }
+
+        .status-online { background-color: #23a55a; }
+        .status-idle { background-color: #f0b232; }
+        .status-dnd { background-color: #f23f43; }
+        .status-offline { background-color: #80848e; }
 
         .profile-details {
             display: flex;
@@ -372,18 +380,22 @@
             overflow: hidden;
         }
 
-        .profile-id {
-            font-size: 0.85rem;
+        .profile-name {
+            font-size: 0.9rem;
             font-weight: 700;
             color: #fff;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .profile-status {
             font-size: 0.7rem;
             color: #888;
             letter-spacing: 0.5px;
-            text-transform: uppercase;
+            font-style: italic;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         footer {
@@ -482,43 +494,21 @@
         <!-- FOUNDERS -->
         <div class="section-container">
             <h2 class="section-heading">Founders</h2>
-            <div class="profiles-grid">
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1045740438147051541</span><span class="profile-status">Founder</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 516925138407653386</span><span class="profile-status">Founder</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1393821550142296145</span><span class="profile-status">Founder</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1162109122242691082</span><span class="profile-status">Founder</span></div></div>
+            <div class="profiles-grid" id="founders-grid">
+                <!-- Javascript will load profiles here -->
             </div>
         </div>
 
         <!-- THREATS -->
         <div class="section-container">
             <h2 class="section-heading">Threats</h2>
-            <div class="profiles-grid">
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1512087904715800629</span><span class="profile-status">Threat</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1473659382800584855</span><span class="profile-status">Threat</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1492561000782893088</span><span class="profile-status">Threat</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1407329376063979550</span><span class="profile-status">Threat</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1313118367439130624</span><span class="profile-status">Threat</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1450026770186240080</span><span class="profile-status">Threat</span></div></div>
-            </div>
+            <div class="profiles-grid" id="threats-grid"></div>
         </div>
 
         <!-- ENEMIES -->
         <div class="section-container">
             <h2 class="section-heading">Enemies</h2>
-            <div class="profiles-grid">
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1333235917259014248</span><span class="profile-status">Enemy</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1429645202930274407</span><span class="profile-status">Enemy</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1469138009042718762</span><span class="profile-status">Enemy</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1543579909060956192</span><span class="profile-status">Enemy</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1417155995460829246</span><span class="profile-status">Enemy</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1494609700258447503</span><span class="profile-status">Enemy</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1538721869061169282</span><span class="profile-status">Enemy</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 543782681796804629</span><span class="profile-status">Enemy</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1459753290433564724</span><span class="profile-status">Enemy</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1437066666411556984</span><span class="profile-status">Enemy</span></div></div>
-                <div class="profile-card"><div class="avatar-box">PBE</div><div class="profile-details"><span class="profile-id">ID: 1181148533991157854</span><span class="profile-status">Enemy</span></div></div>
-            </div>
+            <div class="profiles-grid" id="enemies-grid"></div>
         </div>
     </section>
 
@@ -555,7 +545,80 @@
         window.addEventListener('DOMContentLoaded', () => {
             let views = 1433 + Math.floor(Math.random() * 5);
             document.getElementById('viewCount').textContent = views.toLocaleString();
+
+            // Load Discord Profiles via Lanyard API
+            loadProfiles();
         });
+
+        const founders = ['1045740438147051541', '516925138407653386', '1393821550142296145', '1162109122242691082'];
+        const threats = ['1512087904715800629', '1473659382800584855', '1492561000782893088', '1407329376063979550', '1313118367439130624', '1450026770186240080'];
+        const enemies = ['1333235917259014248', '1429645202930274407', '1469138009042718762', '1543579909060956192', '1417155995460829246', '1494609700258447503', '1538721869061169282', '543782681796804629', '1459753290433564724', '1437066666411556984', '1181148533991157854'];
+
+        async function fetchDiscordUser(userId, containerId) {
+            const container = document.getElementById(containerId);
+            
+            // Default placeholder habang kino-kunin ang data o kung sakaling offline ang API
+            const card = document.createElement('div');
+            card.className = 'profile-card';
+            card.innerHTML = `
+                <div class="avatar-container">
+                    <img src="https://media.discordapp.net/attachments/1375129451175608402/1558185348985528390/content.png" alt="Avatar">
+                    <div class="status-dot status-offline"></div>
+                </div>
+                <div class="profile-details">
+                    <span class="profile-name">User ${userId.slice(-4)}</span>
+                    <span class="profile-status">Offline</span>
+                </div>
+            `;
+            container.appendChild(card);
+
+            try {
+                const response = await fetch(`https://api.lanyard.network/v1/users/${userId}`);
+                const data = await response.json();
+
+                if (data.success && data.data) {
+                    const user = data.data;
+                    const discordUser = user.discord_user;
+                    const avatarUrl = discordUser.avatar 
+                        ? `https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.png` 
+                        : 'https://cdn.discordapp.com/embed/avatars/0.png';
+                    
+                    let statusText = user.discord_status || 'offline';
+                    if (user.activities && user.activities.length > 0) {
+                        const game = user.activities.find(a => a.type === 0);
+                        const spotify = user.spotify;
+                        if (spotify) {
+                            statusText = `Listening to ${spotify.song}`;
+                        } else if (game) {
+                            statusText = `Playing ${game.name}`;
+                        } else {
+                            statusText = statusText.toUpperCase();
+                        }
+                    } else {
+                        statusText = statusText.toUpperCase();
+                    }
+
+                    card.innerHTML = `
+                        <div class="avatar-container">
+                            <img src="${avatarUrl}" alt="${discordUser.username}">
+                            <div class="status-dot status-${user.discord_status || 'offline'}"></div>
+                        </div>
+                        <div class="profile-details">
+                            <span class="profile-name">${discordUser.username}</span>
+                            <span class="profile-status">${statusText}</span>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error(`Error fetching user ${userId}:`, error);
+            }
+        }
+
+        function loadProfiles() {
+            founders.forEach(id => fetchDiscordUser(id, 'founders-grid'));
+            threats.forEach(id => fetchDiscordUser(id, 'threats-grid'));
+            enemies.forEach(id => fetchDiscordUser(id, 'enemies-grid'));
+        }
     </script>
 </body>
 </html>
