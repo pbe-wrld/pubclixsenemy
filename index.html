@@ -33,7 +33,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            padding: 25px 50px;
+            padding: 12px 40px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(8px);
@@ -46,11 +46,12 @@
             gap: 30px;
         }
 
+        /* Pinaliit at ginawang mas manipis ang font weight (400) */
         nav a {
             color: #a0a0a0;
             text-decoration: none;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 400;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             transition: color 0.2s ease;
@@ -61,6 +62,7 @@
 
         nav a:hover, nav a.active {
             color: #ffffff;
+            font-weight: 500;
         }
 
         .nav-right-group {
@@ -69,23 +71,24 @@
             gap: 20px;
         }
 
-        /* Visitor Counter Styling */
+        /* Visitor Counter Styling - Ginawang mas manipis din */
         .visitor-counter {
             display: flex;
             align-items: center;
             gap: 8px;
             font-size: 0.75rem;
+            font-weight: 300;
             letter-spacing: 1.5px;
             color: #888;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 8px 14px;
+            padding: 6px 12px;
             text-transform: uppercase;
         }
 
         .visitor-counter span {
             color: #fff;
-            font-weight: 700;
+            font-weight: 500;
         }
 
         /* Main Balanced Layout */
