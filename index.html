@@ -124,11 +124,11 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: 100px;
-            padding: 40px 30px;
+            gap: 110px;
+            padding: 40px 25px;
             flex-grow: 1;
             width: 100%;
-            max-width: 1450px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -261,7 +261,7 @@
             background: #fff;
         }
 
-        /* Right Column */
+        /* Right Column (Closer to middle with grunge effect) */
         .layout-right {
             display: flex;
             flex-direction: column;
@@ -269,18 +269,22 @@
             width: 44%;
             align-items: flex-end;
             text-align: right;
-            margin-right: -30px;
+            margin-right: -40px;
         }
 
         .threat-title {
             font-family: 'Anton', sans-serif;
             font-size: clamp(3.5rem, 6vw, 6.5rem);
             font-weight: 400;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             color: #ffffff;
             line-height: 0.95;
-            text-shadow: 0 5px 25px rgba(0,0,0,0.7);
+            /* Hardcore Urban Grunge / Sidewalk Text Shadow Effect */
+            text-shadow: 3px 3px 0px rgba(0, 0, 0, 1), 
+                         -2px -2px 0px rgba(0, 0, 0, 1), 
+                         0 0 25px rgba(255, 255, 255, 0.35),
+                         0 5px 30px rgba(0, 0, 0, 0.9);
         }
 
         .action-buttons-row {
