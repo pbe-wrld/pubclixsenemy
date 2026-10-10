@@ -494,9 +494,7 @@
         <!-- FOUNDERS -->
         <div class="section-container">
             <h2 class="section-heading">Founders</h2>
-            <div class="profiles-grid" id="founders-grid">
-                <!-- Javascript will load profiles here -->
-            </div>
+            <div class="profiles-grid" id="founders-grid"></div>
         </div>
 
         <!-- THREATS -->
@@ -546,7 +544,6 @@
             let views = 1433 + Math.floor(Math.random() * 5);
             document.getElementById('viewCount').textContent = views.toLocaleString();
 
-            // Load Discord Profiles via Lanyard API
             loadProfiles();
         });
 
@@ -557,17 +554,17 @@
         async function fetchDiscordUser(userId, containerId) {
             const container = document.getElementById(containerId);
             
-            // Default placeholder habang kino-kunin ang data o kung sakaling offline ang API
             const card = document.createElement('div');
             card.className = 'profile-card';
+            card.id = `card-${userId}`;
             card.innerHTML = `
                 <div class="avatar-container">
-                    <img src="https://media.discordapp.net/attachments/1375129451175608402/1558185348985528390/content.png" alt="Avatar">
+                    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar">
                     <div class="status-dot status-offline"></div>
                 </div>
                 <div class="profile-details">
                     <span class="profile-name">User ${userId.slice(-4)}</span>
-                    <span class="profile-status">Offline</span>
+                    <span class="profile-status">Not in Lanyard</span>
                 </div>
             `;
             container.appendChild(card);
@@ -579,18 +576,20 @@
                 if (data.success && data.data) {
                     const user = data.data;
                     const discordUser = user.discord_user;
-                    const avatarUrl = discordUser.avatar 
-                        ? `https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.png` 
-                        : 'https://cdn.discordapp.com/embed/avatars/0.png';
                     
+                    let avatarUrl = 'https://cdn.discordapp.com/embed/avatars/0.png';
+                    if (discordUser.avatar) {
+                        avatarUrl = `https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.png`;
+                    }
+
                     let statusText = user.discord_status || 'offline';
                     if (user.activities && user.activities.length > 0) {
                         const game = user.activities.find(a => a.type === 0);
                         const spotify = user.spotify;
                         if (spotify) {
-                            statusText = `Listening to ${spotify.song}`;
+                            statusText = `🎵 ${spotify.song}`;
                         } else if (game) {
-                            statusText = `Playing ${game.name}`;
+                            statusText = `🎮 ${game.name}`;
                         } else {
                             statusText = statusText.toUpperCase();
                         }
