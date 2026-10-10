@@ -407,8 +407,8 @@
 </head>
 <body>
 
-    <!-- Hidden HTML5 Audio Element -->
-    <audio id="audioPlayer" src="song.mp3" preload="metadata"></audio>
+    <!-- Updated Audio Source matching the uploaded filename -->
+    <audio id="audioPlayer" src="lv_0_20260809194350.mp3" preload="metadata"></audio>
 
     <!-- Header Section -->
     <header>
@@ -492,7 +492,7 @@
                 audio.play().then(() => {
                     playBtn.textContent = 'PAUSE';
                 }).catch(e => {
-                    alert('Upload your song.mp3 file to GitHub to enable audio playback!');
+                    alert('Error playing audio. Check file path!');
                 });
             } else {
                 audio.pause();
