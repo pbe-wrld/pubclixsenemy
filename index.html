@@ -383,7 +383,7 @@
             main {
                 flex-direction: column;
                 gap: 40px;
-                padding: 30px 20px;
+                padding: zpx 20px;
             }
             .layout-left, .layout-right {
                 width: 100%;
@@ -407,8 +407,8 @@
 </head>
 <body>
 
-    <!-- Updated Audio Source matching the uploaded filename -->
-    <audio id="audioPlayer" src="lv_0_20260809194350.mp3" preload="metadata"></audio>
+    <!-- Audio Element with Autoplay attribute -->
+    <audio id="audioPlayer" src="lv_0_20260809194350.mp3" autoplay loop></audio>
 
     <!-- Header Section -->
     <header>
@@ -492,12 +492,27 @@
                 audio.play().then(() => {
                     playBtn.textContent = 'PAUSE';
                 }).catch(e => {
-                    alert('Error playing audio. Check file path!');
+                    console.log("Playback prevented");
                 });
             } else {
                 audio.pause();
                 playBtn.textContent = 'PLAY';
             }
+        }
+
+        // Auto-play on first user interaction anywhere on the page to bypass browser restrictions
+        document.addEventListener('click', function initAudio() {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    playBtn.textContent = 'PAUSE';
+                }).catch(e => {});
+            }
+            document.removeEventListener('click', initAudio);
+        }, { once: true });
+
+        function openAboutModal(e) {
+            e.preventDefault();
+            document.getElementById('aboutModalstyle').style.display = 'flex'; // fixed typo reference
         }
 
         function openAboutModal(e) {
